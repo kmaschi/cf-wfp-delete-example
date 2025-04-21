@@ -1,0 +1,19 @@
+{
+  "name": "cf-wfp-delete",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dispatch-namespace:create": "wrangler dispatch-namespace create cf-wfp-delete-example",
+    "dispatch-worker:install": "cd packages/dispatch-worker && yarn install",
+    "dispatch-worker:deploy": "cd packages/dispatch-worker && wrangler deploy",
+    "platform-worker:install": "cd packages/platform-worker && yarn install",
+    "platform-worker:deploy": "cd packages/platform-worker && wrangler deploy --dispatch-namespace cf-wfp-delete-example",
+    "platform-worker:delete": "cd packages/platform-worker && wrangler delete cf-wfp-delete-example"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "wrangler": "^4.12.0"
+  },
+  "private": true
+}
