@@ -1,7 +1,5 @@
 # Cloudflare Workers for Platforms Delete Issue
 
-## Resolution
-
 When deleting platform workers, the dispatch worker appears to serve the dispatch worker for a brief period of time.
 This results in unexpected behavior from a platform tenant's perspective where they may observe their worker serving
 requests.
