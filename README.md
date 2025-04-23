@@ -1,8 +1,15 @@
 # Cloudflare Workers for Platforms Delete Issue
 
+## Resolution
+
 When deleting platform workers, the dispatch worker appears to serve the dispatch worker for a brief period of time.
 This results in unexpected behavior from a platform tenant's perspective where they may observe their worker serving
 requests.
+
+**Update from Cloudflare**: Deletes are not instant and sometimes take around a minute to completely clean up, even if
+deployments are under the "all-at-once" deployment model. The recommended approach would be to stop routing requests
+to the deleted platform worker yourself, which may involve some state such as KV to track who has entered this delete
+state.
 
 ## Setup
 
